@@ -17,9 +17,6 @@ public class Prestamos {
             System.out.print("Ingresa nombre del libro: ");
             String Libros = scanner.nextLine();
 
-            System.out.println("Deseas prestar este libro?: ");
-            String Prestamos = scanner.nextLine();
-
             System.out.print("Ingrese su usuario: ");
             String Usuarios = scanner.nextLine();
 
@@ -28,7 +25,7 @@ public class Prestamos {
             String username2 = "root";
             String pass2 = "";
 
-            Editar(Libros, Prestamos, Usuarios);
+            Editar(Libros, Usuarios);
 
         }
 
@@ -57,10 +54,10 @@ public class Prestamos {
             String Autores = resultSet2.getString("Autores");
             String Prestamos  = resultSet2.getString("Prestamos");
             String Usuarios = resultSet2.getString("Usuarios");
-            
+
             System.out.println(" Este es el libro: " + Libros +  " Autor: " + Autores + " Estado: " + Prestamos );
         }
-    }public static void Editar(String Libros, String Prestamos, String Usuarios) throws ClassNotFoundException, SQLException {
+    }public static void Editar(String Libros, String Usuarios) throws ClassNotFoundException, SQLException {
         String driver2 = "com.mysql.cj.jdbc.Driver";
         String url2 = "jdbc:mysql://localhost:3306/prestamoslibros";
         String username2 = "root";
